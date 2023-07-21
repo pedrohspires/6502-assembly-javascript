@@ -1,4 +1,4 @@
-import { FlagsType } from '../types/registradores'
+import { FlagsType } from '../../types/registradores'
 
 type Props = {
     sr: FlagsType;

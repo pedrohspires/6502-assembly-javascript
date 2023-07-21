@@ -1,4 +1,4 @@
-import { Registradores } from "../components/types/registradores";
+import { Registradores } from "../types/registradores";
 
 const registradores: Registradores = {
     a: 0x00,
