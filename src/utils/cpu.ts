@@ -1,6 +1,7 @@
 import registradores from "./registradores";
 import memoria from "./memoria";
 import { Cpu } from "../types/cpu";
+import { Bit } from "../types/registradores";
 
 const cpu: Cpu = {
     registradores,
@@ -13,6 +14,13 @@ export function updateMemoria(index: number, valor: number, cpu: Cpu, setCpu: Re
     setCpu({
         ...cpu,
         memoria: memoriaTemp
+    })
+}
+
+export function updateRegistrador(registrador: "a" | "x" | "y" | "pc" | "sp", valor: number, cpu: Cpu, setCpu: React.Dispatch<React.SetStateAction<Cpu>>){
+    setCpu({
+        ...cpu,
+        registradores: {...cpu.registradores, [registrador]: valor}
     })
 }
 

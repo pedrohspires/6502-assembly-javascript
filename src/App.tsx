@@ -19,7 +19,7 @@ function App() {
 
                     <Registradores cpu={cpu1} />
                 </div>
-
+                
                 <div className="h-56 col-span-2 bg-gray-400 p-4 flex flex-col gap-2">
                     <Memoria
                         inicio={inicio}
