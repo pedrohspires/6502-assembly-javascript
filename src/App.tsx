@@ -1,8 +1,5 @@
 import { useState } from "react";
-import Flags from "./components/Flags";
-import Registrador from "./components/Registrador";
-import cpu, { updateMemoria } from "./utils/cpu";
-import zeroEsquerda from "./utils/zeroEsquerda";
+import cpu from "./utils/cpu";
 import { Cpu } from "./types/cpu";
 import Memoria from "./layouts/Memoria";
 import Registradores from "./layouts/Registradores";
