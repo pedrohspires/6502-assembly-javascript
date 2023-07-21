@@ -1,14 +1,11 @@
-import { Cpu } from "../../types/cpu";
-import { updateMemoria } from "../../utils/cpu";
+import useCpu from "../../hooks/useCpu";
 import zeroEsquerda from "../../utils/zeroEsquerda";
 
 type Props = {
     inicio: number,
     setInicio: React.Dispatch<React.SetStateAction<number>>,
     tamanho: number,
-    setTamanho: React.Dispatch<React.SetStateAction<number>>,
-    cpu: Cpu,
-    setCpu: React.Dispatch<React.SetStateAction<Cpu>>
+    setTamanho: React.Dispatch<React.SetStateAction<number>>
 }
 
 export default function Memoria(props: Props) {
@@ -16,10 +13,10 @@ export default function Memoria(props: Props) {
         inicio,
         setInicio,
         tamanho,
-        setTamanho,
-        cpu,
-        setCpu,
+        setTamanho
     } = props;
+
+    const { cpu, updateMemoria } = useCpu();
 
     return (
         <>
@@ -44,7 +41,7 @@ export default function Memoria(props: Props) {
                             className="px-2 rounded-md w-12"
                         />
                     </div>
-                    <button onClick={() => { updateMemoria(0x0f, cpu.memoria[0x0f] + 1, cpu, setCpu) }}>adicionar</button>
+                    <button onClick={() => { updateMemoria(0x0f, cpu.memoria[0x0f] + 1) }}>adicionar</button>
                 </div>
             </div>
 
