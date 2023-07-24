@@ -1,6 +1,6 @@
-import { Registradores } from "../types/registradores";
+import { RegistradoresType } from "../types/registradores";
 
-const registradores: Registradores = {
+const registradoresModel: RegistradoresType = {
     a: 0x00,
     x: 0x00,
     y: 0x00,
@@ -17,4 +17,4 @@ const registradores: Registradores = {
     ]
 }
 
-export default registradores;
+export default registradoresModel;

@@ -1,26 +1,14 @@
-import useCpu from "../../hooks/useCpu";
+import { useState } from "react";
 import zeroEsquerda from "../../utils/zeroEsquerda";
 
-type Props = {
-    inicio: number,
-    setInicio: React.Dispatch<React.SetStateAction<number>>,
-    tamanho: number,
-    setTamanho: React.Dispatch<React.SetStateAction<number>>
-}
+export default function Memoria() {
 
-export default function Memoria(props: Props) {
-    const {
-        inicio,
-        setInicio,
-        tamanho,
-        setTamanho
-    } = props;
-
-    const { cpu, updateMemoria } = useCpu();
+    const [inicio, setInicio] = useState<number>(0x0000);
+    const [tamanho, setTamanho] = useState<number>(0x00ff);
 
     return (
         <>
-            <div className="flex justify-between">
+            {/* <div className="flex justify-between">
                 <span className="font-semibold">Memória</span>
 
                 <div>
@@ -57,7 +45,7 @@ export default function Memoria(props: Props) {
                         </span>
                     )
                 })}
-            </div>
+            </div> */}
         </>
     )
 }

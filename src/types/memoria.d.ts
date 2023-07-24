@@ -1,1 +1,1 @@
-export type Memoria = Array<number>
+export type MemoriaType = Array<number>

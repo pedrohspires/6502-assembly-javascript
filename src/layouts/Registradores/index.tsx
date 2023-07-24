@@ -1,30 +1,27 @@
 import Registrador from '../../components/Registrador'
 import Flags from '../../components/Flags';
-import { Cpu } from '../../types/cpu';
+import EmuladorContext from '../../context/emulador';
+import { useContext } from 'react';
 
-type Props = {
-    cpu: Cpu
-}
-
-export default function Registradores(props: Props) {
-    const { cpu } = props;
+export default function Registradores() {
+    const { registradores } = useContext(EmuladorContext);
 
     return (
         <>
             <div className="w-full h-1/2 p-4 bg-gray-400 rounded-md flex flex-col justify-center gap-4 select-none">
                 <div className="flex gap-2 justify-center">
-                    <Registrador name="A" value={cpu.registradores.a} />
-                    <Registrador name="X" value={cpu.registradores.x} />
-                    <Registrador name="Y" value={cpu.registradores.y} />
+                    <Registrador name="A" value={registradores?.a || 0} />
+                    <Registrador name="X" value={registradores?.x || 0} />
+                    <Registrador name="Y" value={registradores?.y || 0} />
                 </div>
 
                 <div className="flex gap-2 justify-center">
-                    <Registrador name="PC" value={cpu.registradores.pc} bytes={2} />
-                    <Registrador name="SP" value={cpu.registradores.sp} />
+                    <Registrador name="PC" value={registradores?.pc || 0} bytes={2} />
+                    <Registrador name="SP" value={registradores?.sp || 0} />
                 </div>
 
                 <div className="flex gap-2 justify-center">
-                    <Flags sr={cpu.registradores.sr} />
+                    <Flags sr={registradores?.sr || 0} />
                 </div>
             </div>
         </>
