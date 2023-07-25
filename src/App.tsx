@@ -8,8 +8,13 @@ import { CpuType } from "./types/cpu";
 function App() {
     const [cpu, setCpu] = useState<CpuType>(cpuModel);
 
+    function handleTesteClick(){
+        
+    }
+
     return (
         <div className="w-screen h-screen bg-gray-600 grid grid-cols-1 place-items-center">
+            <button onClick={() => handleTesteClick()}>Teste</button>
             <div className="grid grid-cols-2 gap-8">
                 <textarea className="w-72 rounded-md bg-gray-500 p-4 text-white" rows={16} />
 
