@@ -1,7 +1,7 @@
-import { FlagsType } from '../../types/registradores'
+import { FlagType } from '../../types/flags';
 
 type Props = {
-    sr: FlagsType;
+    sr: Array<FlagType>;
 }
 
 export default function Flags({ sr }: Props) {
