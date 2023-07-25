@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import zeroEsquerda from "../../utils/zeroEsquerda";
 
-export default function Memoria() {
+type Props = {
+    memoria: Array<number>
+}
 
+export default function Memoria({ memoria }: Props) {
     const [inicio, setInicio] = useState<number>(0x0000);
     const [tamanho, setTamanho] = useState<number>(0x00ff);
 
     return (
         <>
-            {/* <div className="flex justify-between">
+            <div className="flex justify-between">
                 <span className="font-semibold">Memória</span>
 
                 <div>
@@ -29,12 +32,11 @@ export default function Memoria() {
                             className="px-2 rounded-md w-12"
                         />
                     </div>
-                    <button onClick={() => { updateMemoria(0x0f, cpu.memoria[0x0f] + 1) }}>adicionar</button>
                 </div>
             </div>
 
             <div className="w-full h-full px-1 bg-gray-100 overflow-y-auto">
-                {cpu.memoria.map((item, index) => {
+                {memoria?.map((item, index) => {
                     if (index > tamanho)
                         return;
 
@@ -45,7 +47,7 @@ export default function Memoria() {
                         </span>
                     )
                 })}
-            </div> */}
+            </div>
         </>
     )
 }

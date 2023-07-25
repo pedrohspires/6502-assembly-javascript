@@ -1,9 +1,8 @@
-import { MemoriaType } from "./memoria"
-import { RegistradoresType } from "./registradores"
+import { Registradores } from "./registradores"
 
-export type Cpu = {
-    memoria: MemoriaType | null,
-    setMemoria: React.Dispatch<React.SetStateAction<MemoriaType>> | null,
-    registradores: RegistradoresType | null,
-    setRegistradores: React.Dispatch<React.SetStateAction<RegistradoresType>> | null
+export type BitType = 0 | 1;
+
+export type CpuType = {
+    memoria: Array<number>,
+    registradores: Registradores
 }

@@ -1,0 +1,1 @@
+export type FlagsType = "C" | "Z" | "I" | "D" | "V" | "N" | "B";
