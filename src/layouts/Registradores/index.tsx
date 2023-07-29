@@ -1,12 +1,16 @@
 import Flags from "../../components/Flags";
 import Registrador from "../../components/Registrador";
+import { FlagType } from "../../types/flags";
 import { RegistradoresType } from "../../types/registradores";
 
 type Props = {
-    registradores: RegistradoresType
+    registradores: RegistradoresType,
+    pc: number,
+    sp: number,
+    sr: Array<FlagType>,
 }
 
-export default function Registradores({ registradores }: Props) {
+export default function Registradores({ registradores, pc, sp, sr }: Props) {
     return (
         <>
             <div className="w-full h-1/2 p-4 bg-gray-400 rounded-md flex flex-col justify-center gap-4 select-none">
@@ -17,12 +21,12 @@ export default function Registradores({ registradores }: Props) {
                 </div>
 
                 <div className="flex gap-2 justify-center">
-                    <Registrador name="PC" value={registradores.pc || 0} bytes={2} />
-                    <Registrador name="SP" value={registradores.sp || 0} />
+                    <Registrador name="PC" value={pc || 0} bytes={2} />
+                    <Registrador name="SP" value={sp || 0} />
                 </div>
 
                 <div className="flex gap-2 justify-center">
-                    <Flags sr={registradores?.sr || 0} />
+                    <Flags sr={sr || 0} />
                 </div>
             </div>
         </>

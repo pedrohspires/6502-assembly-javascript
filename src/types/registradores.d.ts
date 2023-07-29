@@ -5,7 +5,4 @@ export type RegistradoresType = {
     a: number,
     x: number,
     y: number,
-    pc: number,
-    sp: number,
-    sr: Array<FlagType>
 }
